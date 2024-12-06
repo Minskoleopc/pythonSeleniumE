@@ -4,19 +4,45 @@ from selenium.webdriver.common.keys import Keys
 
 # Set up the WebDriver (e.g., Chrome)
 driver = webdriver.Chrome()
+driver.get('https://webdriveruniversity.com/Contact-Us/contactus.html')
 
-try:
-    # Open a webpage
-    driver.get("https://www.google.com")
+# locators 
 
-    # Find the search box using its name attribute
-    search_box = driver.find_element(By.NAME, "q")
+# By id 
+formButton =  driver.find_element(By.ID,"form_buttons")
+# By Name 
+headerElement = driver.find_element(By.NAME , "contactme")
+print(headerElement.text)
+if headerElement.text == "CONTACT US":
+    print("test case pass")
+else:
+    print('test case fail')
 
-    # Type a query and hit Enter
-    search_box.send_keys("Selenium Python" + Keys.RETURN)
+# By ClassName
+headerElementbyClassName = driver.find_element(By.CLASS_NAME,'section_header')
+headerElementbyClassName.text
+if headerElementbyClassName.text == "CONTACT US":
+    print("test case pass")
+else:
+    print('test case fail')
 
-    # Wait for the results to load and display the title
-    print(driver.title)
-finally:
-    # Close the browser
-    driver.quit()
+# By TagName
+textAreaElement = driver.find_element(By.TAG_NAME,'textarea')
+if textAreaElement.is_displayed():
+    print("test case pass")
+else:
+    print("test case fail")
+
+# By xpath 
+textAreaElementByXpath = driver.find_element(By.XPATH,'//*[@id="contact_form"]/textarea')
+if textAreaElementByXpath.is_displayed():
+    print("test case pass")
+else:
+    print("test case fail")
+
+# By Css selector
+textAreaElementByXpathCSSselector = driver.find_element(By.CSS_SELECTOR,'#contact_form > textarea')
+if textAreaElementByXpathCSSselector.is_displayed():
+    print("testcase pass")
+else:
+    print('testcase fail')
