@@ -46,7 +46,6 @@ def handle_modal_popup():
     pass
 
   
-  
 handle_simple_alert()
 handle_confirm_alert_OK()
 handle_confirm_alert_Cancel()
