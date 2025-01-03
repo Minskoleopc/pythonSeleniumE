@@ -50,6 +50,3 @@ print(clickHoldElement.text)
 wait = WebDriverWait(driver,10)
 wait.until(EC.text_to_be_present_in_element((By.ID,'click-box'),"Well done! keep holding that click now....."))
 
-
-
-
