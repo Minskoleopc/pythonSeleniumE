@@ -17,19 +17,23 @@ date_input = driver.find_element(By.ID, "datepicker")
 date_input.click()
 
 # Get the target date (381 days from today)
-future_date = datetime.today() + timedelta(days=381)
-target_year = future_date.year
-target_month = future_date.strftime("%B")  # Full month name (e.g., "August")
-target_day = future_date.day
+#future_date = datetime.today() + timedelta(days=381)
+#print(future_date)
+target_year = "2026" #future_date.year 
+print(target_year )
+target_month = "February" #future_date.strftime("%B")  # Full month name (e.g., "August")
+print(target_month)
+target_day = "6" #future_date.day
+print(target_day)
 
-print(f"Target Date: {target_day} {target_month} {target_year}")
+#print(f"Target Date: {target_day} {target_month} {target_year}")
 
 # Function to select the correct month and year
 def select_month_and_year():
     while True:
         # Get current displayed month and year
         month_year_text = driver.find_element(By.CLASS_NAME, "datepicker-switch").text
-        print(f"Current Calendar Header: {month_year_text}")
+        #print(f"Current Calendar Header: {month_year_text}")
 
         # If correct year and month, break the loop
         if target_month in month_year_text and str(target_year) in month_year_text:
@@ -52,7 +56,7 @@ select_day()
 
 # Get the selected date value
 selected_date = date_input.get_attribute("value")
-print(f"Selected Date: {selected_date}")
+#print(f"Selected Date: {selected_date}")
 
 # Close the browser
 time.sleep(3)
