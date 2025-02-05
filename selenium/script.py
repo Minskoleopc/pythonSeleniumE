@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+import time
 
 # Set up the WebDriver (e.g., Chrome)
 driver = webdriver.Chrome()
@@ -8,8 +9,11 @@ driver.get('https://webdriveruniversity.com/Contact-Us/contactus.html')
 
 # locators 
 
+
+findElement(driver,"form_buttons")
+
 # By id 
-formButton =  driver.find_element(By.ID,"form_buttons")
+#formButton =  driver.find_element(By.ID,"form_buttons")
 # By Name 
 headerElement = driver.find_element(By.NAME , "contactme")
 print(headerElement.text)
@@ -46,3 +50,6 @@ if textAreaElementByXpathCSSselector.is_displayed():
     print("testcase pass")
 else:
     print('testcase fail')
+
+
+
