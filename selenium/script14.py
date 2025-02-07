@@ -11,6 +11,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 driver = webdriver.Chrome()
+driver.save_screenshot()
 driver.get('https://webdriveruniversity.com/Autocomplete-TextField/autocomplete-textfield.html?food-item')
 driver.find_element(By.ID,'myInput').send_keys('a')
 time.sleep(2)
