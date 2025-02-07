@@ -45,13 +45,7 @@ def enter_text(driver,locator,text):
    element.send_keys(text)
 
 # Get text from element 
-# <h1>Hello</h1>
 def get_text(driver,locator):
    element = wait_for_element_to_be_visible(driver,locator)
    return element.text
-   # update
-   
-def get_text(driver,locator):
-   element = wait_for_element_to_be_visible(driver,locator)
-   return element.text
-   # update
+
