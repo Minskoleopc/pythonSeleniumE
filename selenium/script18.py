@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+
 # Initialize WebDriver
 driver = webdriver.Chrome()
 driver.get("https://webdriveruniversity.com/Data-Table/index.html")
